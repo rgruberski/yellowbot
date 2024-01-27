@@ -1,0 +1,437 @@
+<?xml version="1.0" ?>
+<robot name="yellowbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find yellowbot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find yellowbot_description)/urdf/yellowbot.trans" />
+<xacro:include filename="$(find yellowbot_description)/urdf/yellowbot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.00206432938820023 0.006489755577388898 0.047290903878465275" rpy="0 0 0"/>
+    <mass value="0.1499965356563348"/>
+    <inertia ixx="0.000768" iyy="0.001019" izz="0.001598" ixy="-0.0" iyz="0.0" ixz="-1.5e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="yellow"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_1">
+  <inertial>
+    <origin xyz="3.2484737044605194e-05 0.02242577012997863 0.006797512893081892" rpy="0 0 0"/>
+    <mass value="0.15999999835535966"/>
+    <inertia ixx="4.6e-05" iyy="2.4e-05" izz="4.6e-05" ixy="-0.0" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.082977 0.07731 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.082977 0.07731 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_coupling_1">
+  <inertial>
+    <origin xyz="-5.366490828107029e-08 0.0018686955681204015 -1.0195534567991604e-07" rpy="0 0 0"/>
+    <mass value="0.00998364830604544"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.082977 0.09831 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_coupling_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.082977 0.09831 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_coupling_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_1">
+  <inertial>
+    <origin xyz="-1.5129472803659949e-05 -0.0020913737286088613 1.306794214284146e-05" rpy="0 0 0"/>
+    <mass value="0.13998197723426226"/>
+    <inertia ixx="7.8e-05" iyy="0.000129" izz="7.8e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.082977 0.10431 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.082977 0.10431 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_2">
+  <inertial>
+    <origin xyz="0.2358554847370447 -0.11197222987002067 0.018797512893081927" rpy="0 0 0"/>
+    <mass value="0.15999999835535966"/>
+    <inertia ixx="4.6e-05" iyy="2.4e-05" izz="4.6e-05" ixy="-0.0" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.1588 -0.057088 -0.030706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.1588 -0.057088 -0.030706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_coupling_2">
+  <inertial>
+    <origin xyz="0.15999994633509196 0.0018686955681210676 -1.0195534574930498e-07" rpy="0 0 0"/>
+    <mass value="0.00998364830604544"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="-0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.082977 0.09831 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_coupling_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.082977 0.09831 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_coupling_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_2">
+  <inertial>
+    <origin xyz="0.1599848705271962 -0.0020913737286080286 1.3067942142806765e-05" rpy="0 0 0"/>
+    <mass value="0.13998197723426226"/>
+    <inertia ixx="7.8e-05" iyy="0.000129" izz="7.8e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.082977 0.10431 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/wheel_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.082977 0.10431 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/wheel_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_3">
+  <inertial>
+    <origin xyz="-0.09180959206686148 -0.14922425897520103 0.018797512893082343" rpy="0 0 0"/>
+    <mass value="0.15999999835535966"/>
+    <inertia ixx="4.6e-05" iyy="2.4e-05" izz="4.6e-05" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0088 -0.217088 -0.030706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0088 -0.217088 -0.030706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_coupling_3">
+  <inertial>
+    <origin xyz="-5.36649086141372e-08 0.20773081558665762 -1.0195534513868232e-07" rpy="0 0 0"/>
+    <mass value="0.00998364830604544"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.082977 0.09831 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_coupling_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.082977 0.09831 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_coupling_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_3">
+  <inertial>
+    <origin xyz="1.5022142987042297e-05 0.22369088488338681 1.3067942143389633e-05" rpy="0 0 0"/>
+    <mass value="0.13998197723426226"/>
+    <inertia ixx="7.8e-05" iyy="0.000129" izz="7.8e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.082977 0.10431 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/wheel_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.082977 0.10431 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/wheel_3.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_4">
+  <inertial>
+    <origin xyz="0.06819040793313862 0.010775741024799251 0.018797512893082322" rpy="0 0 0"/>
+    <mass value="0.15999999835535966"/>
+    <inertia ixx="4.6e-05" iyy="2.4e-05" izz="4.6e-05" ixy="-0.0" iyz="1e-06" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.0088 -0.057088 -0.030706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.0088 -0.057088 -0.030706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="motor_coupling_4">
+  <inertial>
+    <origin xyz="0.15999994633509151 0.20773081558665746 -1.0195534522888794e-07" rpy="0 0 0"/>
+    <mass value="0.00998364830604544"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.082977 0.09831 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_coupling_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.082977 0.09831 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/motor_coupling_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel_4">
+  <inertial>
+    <origin xyz="0.16001502214298716 0.2236908848833868 1.3067942143348e-05" rpy="0 0 0"/>
+    <mass value="0.13998197723426226"/>
+    <inertia ixx="7.8e-05" iyy="0.000129" izz="7.8e-05" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.082977 0.10431 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/wheel_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="black"/>
+  </visual>
+  <collision>
+    <origin xyz="0.082977 0.10431 -0.042706" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/wheel_4.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="top_plate_1">
+  <inertial>
+    <origin xyz="0.09255747874690023 -0.0788862444226099 0.0015000000000010283" rpy="0 0 0"/>
+    <mass value="0.1899633311246887"/>
+    <inertia ixx="0.000783" iyy="0.000987" izz="0.001769" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.107594 -0.085376 -0.093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/top_plate_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="white"/>
+  </visual>
+  <collision>
+    <origin xyz="0.107594 -0.085376 -0.093" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/top_plate_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="led_left_1">
+  <inertial>
+    <origin xyz="-0.0027217086827567988 -1.393754581276857e-05 2.4764199174076573e-05" rpy="0 0 0"/>
+    <mass value="0.010031319984296835"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.11951 -0.051133 -0.055448" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/led_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="red"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.11951 -0.051133 -0.055448" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/led_left_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="led_left_2">
+  <inertial>
+    <origin xyz="0.23643129131724333 -0.05276755093930272 0.012024764199173692" rpy="0 0 0"/>
+    <mass value="0.010031319984296835"/>
+    <inertia ixx="0.0" iyy="0.0" izz="0.0" ixy="0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.119643 -0.0146 -0.043448" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/led_left_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="red"/>
+  </visual>
+  <collision>
+    <origin xyz="0.119643 -0.0146 -0.043448" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://yellowbot_description/meshes/led_left_2.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="base_link_back_right_motor" type="fixed">
+  <origin xyz="-0.082977 -0.07731 0.042706" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="motor_1"/>
+</joint>
+
+<joint name="back_right_motor_revolute" type="continuous">
+  <origin xyz="0.0 -0.021 0.0" rpy="0 0 0"/>
+  <parent link="motor_1"/>
+  <child link="motor_coupling_1"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="back_right_motor_rigid" type="fixed">
+  <origin xyz="0.0 -0.006 0.0" rpy="0 0 0"/>
+  <parent link="motor_coupling_1"/>
+  <child link="wheel_1"/>
+</joint>
+
+<joint name="base_link_front_right_motor" type="fixed">
+  <origin xyz="-0.1588 0.057088 0.030706" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="motor_2"/>
+</joint>
+
+<joint name="front_right_motor_revolute" type="continuous">
+  <origin xyz="0.075823 -0.155398 0.012" rpy="0 0 0"/>
+  <parent link="motor_2"/>
+  <child link="motor_coupling_2"/>
+  <axis xyz="-0.0 -1.0 -0.0"/>
+</joint>
+
+<joint name="front_right_motor_rigid" type="fixed">
+  <origin xyz="0.0 -0.006 0.0" rpy="0 0 0"/>
+  <parent link="motor_coupling_2"/>
+  <child link="wheel_2"/>
+</joint>
+
+<joint name="base_link_back_left_motor" type="fixed">
+  <origin xyz="0.0088 0.217088 0.030706" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="motor_3"/>
+</joint>
+
+<joint name="back_left_motor_revolute" type="continuous">
+  <origin xyz="-0.091777 -0.315398 0.012" rpy="0 0 0"/>
+  <parent link="motor_3"/>
+  <child link="motor_coupling_3"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="back_left_motor_rigid" type="fixed">
+  <origin xyz="0.0 -0.006 0.0" rpy="0 0 0"/>
+  <parent link="motor_coupling_3"/>
+  <child link="wheel_3"/>
+</joint>
+
+<joint name="base_link_front_left_motor" type="fixed">
+  <origin xyz="0.0088 0.057088 0.030706" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="motor_4"/>
+</joint>
+
+<joint name="front_left_motor_revolute" type="continuous">
+  <origin xyz="-0.091777 -0.155398 0.012" rpy="0 0 0"/>
+  <parent link="motor_4"/>
+  <child link="motor_coupling_4"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="front_left_motor_rigid" type="fixed">
+  <origin xyz="0.0 -0.006 0.0" rpy="0 0 0"/>
+  <parent link="motor_coupling_4"/>
+  <child link="wheel_4"/>
+</joint>
+
+<joint name="base_link_top_plate" type="fixed">
+  <origin xyz="-0.107594 0.085376 0.093" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="top_plate_1"/>
+</joint>
+
+<joint name="base_link_left_led" type="fixed">
+  <origin xyz="0.11951 0.051133 0.055448" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="led_left_1"/>
+</joint>
+
+<joint name="base_link_right_led" type="fixed">
+  <origin xyz="-0.119643 0.0146 0.043448" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="led_left_2"/>
+</joint>
+
+</robot>
